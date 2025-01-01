@@ -1,0 +1,97 @@
+El esquema está compuesto por varias tablas que se relacionan entre sí. 
+Se utilizarán claves foráneas para establecer las relaciones entre las tablas, 
+y los atributos multivalor se manejarán en tablas adicionales que vinculen a las 
+entidades de forma más flexible.
+
+
+
+
+Esquema del Proyecto:
+1- Tabla medicos: Contendrá la información básica sobre los médicos.
+2- Tabla pacientes: Contendrá la información básica sobre los pacientes.
+3- Tabla consultas: Registra las consultas(o visitas) entre médicos y pacientes.
+4- Tabla especialidades: Registra las especialidades de los médicos.
+5- Tabla medicamentos: Los medicamentos recetados en las consultas.
+6- Tabla paciente_medicamentos: Relaciona los pacientes con los medicamentos recetados (atributo multivalor).
+
+
+
+Mmáximo de 5 atributos por tabla:
+
+
+Tabla Médicos:
+    ID Médico
+    Nombre
+    Especialidad
+    Teléfono
+    Correo electrónico
+
+
+Tabla Pacientes:
+    ID Paciente
+    Nombre
+    Fecha de nacimiento
+    Teléfono
+    Dirección
+
+
+Tabla Consultas:
+    ID Consulta
+    Fecha y hora
+    ID Médico
+    ID Paciente
+    Motivo de consulta
+    
+    
+Tabla Especialidades:
+    ID Especialidad
+    Nombre
+    Descripción
+    Código (ejemplo: "CAR-001")
+    Médico asignado (Nombre)
+
+
+Tabla Medicamentos:
+    ID Medicamento
+    Nombre
+    Tipo (tableta, jarabe, etc.)
+    Dosis recomendada
+    Efectos secundarios
+
+
+Tabla Paciente_Medicamentos:
+    ID Paciente
+    ID Medicamento
+    Fecha de prescripción
+    Dosis
+    Duración del tratamiento (Dias)
+
+
+
+
+
+
+De inicio:
+
+-- Crear la base de datos en Xampp.
+CREATE DATABASE clinica;
+
+-- Usar la base de datos creada.
+USE clinica;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
